@@ -7,7 +7,7 @@ public abstract class PrintableObject implements NamedObject, Printable {
 	}
 	
 	public void print() {
-		System.out.print(this.toString()); //prints on single line
+		System.out.println(this.toString());
 		
 	}
 	
