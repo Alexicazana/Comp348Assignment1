@@ -49,13 +49,7 @@ list cdr(element e)
     if(e.type != LIST)
         return NULL;
 
-    list l = e.l;
-
-    while(l != NULL) {
-        l = l->next;
-    }
-
-    return l;
+    return e.l->next;
 }
 
 list cddr(element e)
@@ -112,9 +106,6 @@ void print(element e)
 
 int main()
 {
-
-   
-    
     list l2 = cons(
         lasel(
             cons(
@@ -130,6 +121,14 @@ int main()
 
     list root = cons(aasel('a'), l2);
     print(lasel(root));
+
+    printf("\n");
+    
+    print(car(lasel(root)));
+    printf("\n");
+    
+    print(lasel(cdr(lasel(root))));
+
 
     lfreer(root);
 
